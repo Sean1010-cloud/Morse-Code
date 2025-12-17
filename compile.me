@@ -1,0 +1,15 @@
+javac -cp .:jSerialComm-2.11.0.jar SerialCommunication.java                             // for mac
+javac -cp .:jSerialComm-2.11.0.jar SerialCommunication.java SerialServer.java
+javac -cp .:jSerialComm-2.11.0.jar SerialCommunication.java SerialTcpClient.java
+java -cp .:jSerialComm-2.11.0.jar SerialServer 9000 /dev/cu.usbmodem41201 9600 8N1
+java -cp .:jSerialComm-2.11.0.jar SerialTcpClient 127.0.0.1 9000 /dev/cu.usbmodem41201
+javac -cp ".;jSerialComm-2.11.0.jar" SerialCommunication.java                           // for windows
+javac -cp ".;jSerialComm-2.11.0.jar" SerialCommunication.java SerialServer.java
+javac -cp ".;jSerialComm-2.11.0.jar" SerialCommunication.java SerialTcpClient.java
+java -cp ".;jSerialComm-2.11.0.jar" SerialServer 9000 /dev/cu.usbmodem41201 9600 8N1
+java -cp ".;jSerialComm-2.11.0.jar" SerialTcpClient 127.0.0.1 9000 /dev/cu.usbmodem41201
+
+// • 9000: The TCP port on which the server listens for client connections.
+// • /dev/cu.usbmodem41201: The serial port to which the hardware device is connected.
+// • 9600: The baud rate for serial communication.
+// • 8N1: The serial configuration (8 data bits, no parity, 1 stop bit).
