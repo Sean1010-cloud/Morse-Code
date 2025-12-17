@@ -1,0 +1,2 @@
+ls /dev/cu.usbmodem41201
+java -cp .:jSerialComm-2.11.0.jar SerialTcpClient 127.0.0.1 9000 COM4
